@@ -120,3 +120,7 @@
 .dark .bottom-cta {
     background: linear-gradient(135deg, #12101c 0%, #17142a 50%, #141120 100%);
 }
+
+.dark .bottom-cta__form-wrapper iframe {
+    filter: invert(1) hue-rotate(180deg);
+}

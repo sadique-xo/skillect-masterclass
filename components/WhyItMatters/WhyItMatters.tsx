@@ -1,6 +1,7 @@
 import "./WhyItMatters.css";
 import { TrendingUp, Globe, ShieldCheck, IndianRupee } from "lucide-react";
 import { ReactNode } from "react";
+import { ShineBorder } from "@/components/ui/shine-border";
 
 const stats: { icon: ReactNode; stat: string; title: string; description: string }[] = [
     {
@@ -48,6 +49,10 @@ export default function WhyItMatters() {
                             className="why-card reveal"
                             style={{ transitionDelay: `${i * 0.1}s` }}
                         >
+                            <ShineBorder
+                                className="pointer-events-none"
+                                shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+                            />
                             <div className="why-card__icon">{item.icon}</div>
                             <div className="why-card__stat">{item.stat}</div>
                             <h3 className="why-card__title">{item.title}</h3>

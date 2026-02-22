@@ -3,6 +3,7 @@
 import "./TrustSection.css";
 import BlurText from "@/components/BlurText";
 import { Gift, ShieldCheck, BadgeDollarSign } from "lucide-react";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 
 const trustPoints = [
     {
@@ -27,8 +28,17 @@ const trustPoints = [
 
 export default function TrustSection() {
     return (
-        <section className="trust" id="trust">
-            <div className="container trust__inner">
+        <section className="trust relative overflow-hidden" id="trust">
+            <FlickeringGrid
+                className="absolute inset-0 h-full w-full pointer-events-none"
+                style={{ zIndex: 0 }}
+                squareSize={4}
+                gridGap={6}
+                color="#6933FF"
+                maxOpacity={0.15}
+                flickerChance={0.1}
+            />
+            <div className="container trust__inner" style={{ position: "relative", zIndex: 10 }}>
                 <BlurText
                     text="Don't Pay First. Experience First."
                     className="trust__headline"

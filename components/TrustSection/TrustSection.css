@@ -53,13 +53,11 @@
 .trust__point-icon {
     width: 56px;
     height: 56px;
-    border-radius: var(--radius-md);
-    background: linear-gradient(135deg, #6933FF 0%, #A033FF 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 16px;
-    color: var(--white);
+    color: var(--primary);
 }
 
 .trust__point-title {

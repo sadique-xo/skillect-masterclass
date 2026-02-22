@@ -13,11 +13,41 @@ export const metadata: Metadata = {
     "Skillect",
     "Career",
   ],
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/images/logo/Icon-White%20Theme.png",
+        href: "/images/logo/Icon-White%20Theme.png",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/images/logo/Icon-Dark%20Theme.png",
+        href: "/images/logo/Icon-Dark%20Theme.png",
+      },
+    ],
+  },
   openGraph: {
     title: "Skillect Masterclass - Unlock Your Future in Cloud & DevOps",
     description:
       "Free live webinar breaking down AWS & DevOps essentials. Reserve your spot today!",
     type: "website",
+    siteName: "Skillect",
+    images: [
+      {
+        url: "/images/logo/Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Skillect Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Skillect Masterclass - Unlock Your Future in Cloud & DevOps",
+    description:
+      "Free live webinar breaking down AWS & DevOps essentials. Reserve your spot today!",
+    images: ["/images/logo/Logo.png"],
   },
 };
 

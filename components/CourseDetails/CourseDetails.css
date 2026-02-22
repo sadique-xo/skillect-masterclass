@@ -84,7 +84,6 @@
     padding: 32px !important;
     border-radius: 16px !important;
     border-color: rgba(105, 51, 255, 0.15) !important;
-    background: linear-gradient(145deg, #0d0d1a 0%, #111128 50%, #0a0a18 100%) !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
