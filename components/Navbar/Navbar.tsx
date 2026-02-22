@@ -34,12 +34,12 @@ export default function Navbar() {
             <div className="navbar__inner container">
                 <a href="#" className="navbar__logo">
                     <img
-                        src="/images/logo/Logo.png"
+                        src="/images/logo/logo.png"
                         alt="Skillect Logo"
                         className="navbar__logo-light"
                     />
                     <img
-                        src="/images/logo/Icon-Dark Theme.png"
+                        src="/images/logo/icon-dark.png"
                         alt="Skillect Logo"
                         className="navbar__logo-dark"
                     />

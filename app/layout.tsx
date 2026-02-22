@@ -16,14 +16,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: "/images/logo/icon-light.png",
+        href: "/images/logo/icon-light.png",
+      },
+      {
         media: "(prefers-color-scheme: light)",
-        url: "/images/logo/Icon-White%20Theme.png",
-        href: "/images/logo/Icon-White%20Theme.png",
+        url: "/images/logo/icon-light.png",
+        href: "/images/logo/icon-light.png",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/images/logo/Icon-Dark%20Theme.png",
-        href: "/images/logo/Icon-Dark%20Theme.png",
+        url: "/images/logo/icon-dark.png",
+        href: "/images/logo/icon-dark.png",
       },
     ],
   },
@@ -35,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Skillect",
     images: [
       {
-        url: "/images/logo/Logo.png",
+        url: "/images/logo/logo.png",
         width: 1200,
         height: 630,
         alt: "Skillect Logo",
@@ -47,7 +51,7 @@ export const metadata: Metadata = {
     title: "Skillect Masterclass - Unlock Your Future in Cloud & DevOps",
     description:
       "Free live webinar breaking down AWS & DevOps essentials. Reserve your spot today!",
-    images: ["/images/logo/Logo.png"],
+    images: ["/images/logo/logo.png"],
   },
 };
 
