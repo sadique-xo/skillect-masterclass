@@ -1,0 +1,64 @@
+/* ============================================
+   ZERO RISK — Conversion Checklist
+   ============================================ */
+
+.zero-risk {
+    padding: var(--section-py) 0;
+    background: var(--white);
+}
+
+.zero-risk__inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.zero-risk__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 48px;
+}
+
+.zero-risk__item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--bg-subtle);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.zero-risk__item:hover {
+    transform: translateX(6px);
+    box-shadow: var(--shadow-md);
+}
+
+.zero-risk__check {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6C1457 0%, #16518D 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.zero-risk__text {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    .zero-risk__item {
+        padding: 16px 20px;
+    }
+
+    .zero-risk__text {
+        font-size: 0.9375rem;
+    }
+}

@@ -29,6 +29,21 @@ const faqs = [
         answer:
             "After the webinar, you'll receive access to the session recording and exclusive resources. You'll also learn about our comprehensive Cloud & DevOps training program for those who want to continue their learning journey.",
     },
+    {
+        question: "When do I pay ₹999?",
+        answer:
+            "Only if you decide to continue after the first free session. There's absolutely no obligation — attend the free class, experience the teaching, and then decide.",
+    },
+    {
+        question: "Is coding required?",
+        answer:
+            "No. We teach everything from scratch. The course is designed for complete beginners with no coding or technical background required.",
+    },
+    {
+        question: "Is this suitable for non-IT students?",
+        answer:
+            "Absolutely yes. Students from any branch — Commerce, Arts, Science, Engineering — can learn cloud computing. Many of our successful students come from non-IT backgrounds.",
+    },
 ];
 
 export default function FAQ() {
