@@ -1,6 +1,7 @@
 import "./LearnCards.css";
 import { Cloud, Settings, Workflow, Rocket, Map, Briefcase } from "lucide-react";
 import { ReactNode } from "react";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 const topics: { icon: ReactNode; title: string; description: string }[] = [
     {
@@ -56,6 +57,7 @@ export default function LearnCards() {
                             className="learn-card reveal"
                             style={{ transitionDelay: `${i * 0.08}s` }}
                         >
+                            <BorderBeam size={250} duration={12} delay={9} />
                             <div className="learn-card__icon">{topic.icon}</div>
                             <h3 className="learn-card__title">{topic.title}</h3>
                             <p className="learn-card__desc">{topic.description}</p>
