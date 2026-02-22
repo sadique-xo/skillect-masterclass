@@ -2,10 +2,11 @@
 
 import "./CourseDetails.css";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { Calendar, Clock, MapPin, Award, Laptop, Target } from "lucide-react";
 
 const courseItems = [
     {
-        icon: "📅",
+        icon: <Calendar size={28} color="#A033FF" strokeWidth={1.5} />,
         title: "4 Weeks Duration",
         description:
             "A structured 4-week program covering AWS fundamentals to advanced concepts with hands-on labs.",
@@ -16,7 +17,7 @@ const courseItems = [
         ],
     },
     {
-        icon: "🕒",
+        icon: <Clock size={28} color="#A033FF" strokeWidth={1.5} />,
         title: "Flexible Schedule",
         description:
             "Choose between weekend or weekday batches that fit your college or work schedule.",
@@ -27,7 +28,7 @@ const courseItems = [
         ],
     },
     {
-        icon: "📍",
+        icon: <MapPin size={28} color="#A033FF" strokeWidth={1.5} />,
         title: "Online & Offline",
         description:
             "Attend from anywhere online or join in-person sessions - whatever works best for you.",
@@ -38,7 +39,7 @@ const courseItems = [
         ],
     },
     {
-        icon: "📜",
+        icon: <Award size={28} color="#A033FF" strokeWidth={1.5} />,
         title: "Certificate Included",
         description:
             "Get a course completion certificate to add to your resume and LinkedIn profile.",
@@ -49,7 +50,7 @@ const courseItems = [
         ],
     },
     {
-        icon: "💻",
+        icon: <Laptop size={28} color="#A033FF" strokeWidth={1.5} />,
         title: "Hands-On Projects",
         description:
             "Build real AWS projects during the course to create a portfolio that impresses recruiters.",
@@ -60,7 +61,7 @@ const courseItems = [
         ],
     },
     {
-        icon: "🎯",
+        icon: <Target size={28} color="#A033FF" strokeWidth={1.5} />,
         title: "Career Guidance",
         description:
             "Get personalized career advice, resume tips, and interview prep included in the course.",
@@ -98,12 +99,16 @@ export default function CourseDetails() {
                     <h2 className="section-title reveal">
                         AWS Fundamentals - Full Course
                     </h2>
-                    <div className="reveal">
-                        <span className="course-details__price-badge">
+                    <div className="reveal course-details__pricing">
+                        <div className="course-details__price-group">
                             <span className="course-details__price-original">₹4,999</span>
                             <span className="course-details__price-current">Just ₹999</span>
-                            - Student Special Batch
-                        </span>
+                            <span className="course-details__price-badge">Student Special Batch</span>
+                        </div>
+                        <a href="#register" className="btn btn-primary btn-lg course-details__cta">
+                            Register for free first class
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                        </a>
                     </div>
                     <p className="course-details__subtitle reveal">
                         After attending the free demo class, continue your learning journey

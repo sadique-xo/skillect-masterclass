@@ -195,15 +195,12 @@ const ShaderMaterial = ({
 
   useFrame((state, delta) => {
     if (!ref.current) return;
-    const timestamp = state.elapsed;
-    if (timestamp - lastFrameTime < 1 / maxFps) {
-      return;
-    }
-    lastFrameTime = timestamp;
+
+    lastFrameTime += delta;
 
     const material: any = ref.current.material;
     const timeLocation = material.uniforms.u_time;
-    timeLocation.value = timestamp;
+    timeLocation.value = lastFrameTime;
   });
 
   const getUniforms = () => {

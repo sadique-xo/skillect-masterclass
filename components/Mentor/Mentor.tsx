@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./Mentor.css";
 
 const tags = [
@@ -21,8 +22,14 @@ export default function Mentor() {
                 <div className="mentor-card reveal">
                     {/* Photo side */}
                     <div className="mentor-card__photo">
-                        <div className="mentor-card__photo-placeholder">
-                            <span className="mentor-card__photo-initials">JK</span>
+                        <div className="mentor-card__photo-wrapper">
+                            <Image
+                                src="/images/Jithin Medium.png"
+                                alt="Jithin Kannan"
+                                width={220}
+                                height={220}
+                                className="mentor-card__image"
+                            />
                         </div>
                     </div>
 

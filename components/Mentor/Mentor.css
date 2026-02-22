@@ -2,33 +2,32 @@
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 48px;
-    align-items: center;
+    align-items: end;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
-    padding: 48px;
+    padding: 48px 48px 0 48px;
     box-shadow: var(--shadow-md);
     max-width: 900px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
-.mentor-card__photo-placeholder {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.mentor-card__info {
+    padding-bottom: 48px;
+}
+
+.mentor-card__photo-wrapper {
+    width: 100%;
+    max-width: 280px;
     margin: 0 auto;
-    box-shadow: 0 8px 32px rgba(105, 51, 255, 0.2);
 }
 
-.mentor-card__photo-initials {
-    font-size: 4rem;
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: 0.05em;
+.mentor-card__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .mentor-card__name {
@@ -81,17 +80,22 @@
     .mentor-card {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 36px 24px;
+        padding: 36px 24px 0 24px;
         gap: 32px;
     }
 
-    .mentor-card__photo-placeholder {
-        width: 160px;
-        height: 160px;
+    .mentor-card__info {
+        padding-bottom: 36px;
+        order: 1;
     }
 
-    .mentor-card__photo-initials {
-        font-size: 3rem;
+    .mentor-card__photo {
+        order: 2;
+    }
+
+    .mentor-card__photo-wrapper {
+        width: 100%;
+        max-width: 220px;
     }
 
     .mentor-card__tags {
@@ -103,14 +107,6 @@
 .dark .mentor-card__tag {
     background: linear-gradient(135deg, rgba(135, 92, 255, 0.12), rgba(179, 92, 255, 0.12));
     border-color: rgba(135, 92, 255, 0.2);
-}
-
-.dark .mentor-card__photo-placeholder {
-    box-shadow: 0 8px 32px rgba(135, 92, 255, 0.3);
-}
-
-.dark .mentor-card__photo-initials {
-    color: #ffffff;
 }
 
 .dark .mentor-card__tag:hover {

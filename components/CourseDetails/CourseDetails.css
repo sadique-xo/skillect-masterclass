@@ -12,29 +12,53 @@
     margin-bottom: 56px;
 }
 
-.course-details__price-badge {
+.course-details__pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.course-details__price-group {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    background: linear-gradient(135deg, #6933FF 0%, #A033FF 100%);
-    color: var(--white);
-    padding: 16px 32px;
-    border-radius: var(--radius-full);
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 32px;
-    box-shadow: 0 4px 20px rgba(105, 51, 255, 0.3);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
 }
 
 .course-details__price-original {
     text-decoration: line-through;
-    opacity: 0.7;
-    font-weight: 400;
-    font-size: 1rem;
+    opacity: 0.6;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--text-muted);
 }
 
 .course-details__price-current {
-    font-size: 1.5rem;
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6933FF 0%, #A033FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.course-details__price-badge {
+    padding: 6px 16px;
+    background: rgba(105, 51, 255, 0.1);
+    color: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(105, 51, 255, 0.2);
+}
+
+.course-details__cta {
+    margin-top: 4px;
 }
 
 .course-details__subtitle {
@@ -141,9 +165,8 @@
 }
 
 @media (max-width: 768px) {
-    .course-details__price-badge {
-        font-size: 1rem;
-        padding: 12px 24px;
+    .course-details__price-current {
+        font-size: 2.5rem;
     }
 
     .course-cards-grid {
@@ -159,8 +182,9 @@
 
 /* ---------- Dark Mode ---------- */
 .dark .course-details__price-badge {
-    box-shadow: 0 4px 20px rgba(135, 92, 255, 0.35);
-    color: #ffffff;
+    background: rgba(135, 92, 255, 0.15);
+    color: #A585FF;
+    border-color: rgba(135, 92, 255, 0.3);
 }
 
 .dark .course-card__title {

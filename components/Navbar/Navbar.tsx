@@ -64,11 +64,12 @@ export default function Navbar() {
                     </li>
                 </ul>
 
-                <a href="#register" className="btn btn-primary navbar__cta-btn">
-                    Register Now
-                </a>
-
-                <AnimatedThemeToggler className="navbar__theme-toggle" />
+                <div className="navbar__actions">
+                    <AnimatedThemeToggler className="navbar__theme-toggle" />
+                    <a href="#register" className="btn btn-primary navbar__cta-btn">
+                        Register Now
+                    </a>
+                </div>
 
                 <button
                     className={`navbar__hamburger ${mobileOpen ? "navbar__hamburger--open" : ""}`}

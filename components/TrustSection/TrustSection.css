@@ -9,18 +9,6 @@
     overflow: hidden;
 }
 
-.trust::before {
-    content: '';
-    position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: rgba(105, 51, 255, 0.06);
-    pointer-events: none;
-}
-
 .trust__inner {
     text-align: center;
     max-width: 800px;
@@ -106,10 +94,6 @@
 /* ---------- Dark Mode ---------- */
 .dark .trust {
     background: linear-gradient(135deg, #12101c 0%, #14122a 50%, #111020 100%);
-}
-
-.dark .trust::before {
-    background: rgba(135, 92, 255, 0.1);
 }
 
 .dark .trust__point-icon {

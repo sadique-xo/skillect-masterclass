@@ -16,12 +16,12 @@
 }
 
 .testimonial-card {
-    min-width: 340px;
-    max-width: 380px;
+    min-width: 320px;
+    max-width: 360px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 32px 28px;
+    padding: 24px 24px;
     flex-shrink: 0;
     transition: all var(--transition);
     position: relative;
@@ -39,10 +39,10 @@
 }
 
 .testimonial-card__text {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 24px;
+    line-height: 1.6;
+    margin-bottom: 20px;
     font-style: italic;
 }
 
