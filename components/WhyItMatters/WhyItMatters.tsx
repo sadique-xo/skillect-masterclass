@@ -15,7 +15,7 @@ const stats: { icon: ReactNode; stat: string; title: string; description: string
         stat: "10+",
         title: "Diverse Career Options",
         description:
-            "Become a Cloud Engineer, DevOps Engineer, Solutions Architect, or Site Reliability Engineer—across industries.",
+            "Become a Cloud Engineer, DevOps Engineer, Solutions Architect, or Site Reliability Engineer-across industries.",
     },
     {
         icon: <ShieldCheck size={28} />,
@@ -39,7 +39,7 @@ export default function WhyItMatters() {
             <div className="container">
                 <h2 className="section-title reveal">Why It Matters Right Now</h2>
                 <p className="section-subtitle reveal">
-                    The cloud and DevOps revolution is here — position yourself at the forefront
+                    The cloud and DevOps revolution is here - position yourself at the forefront
                 </p>
                 <div className="why-grid">
                     {stats.map((item, i) => (

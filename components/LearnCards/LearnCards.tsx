@@ -13,7 +13,7 @@ const topics: { icon: ReactNode; title: string; description: string }[] = [
         icon: <Settings size={24} />,
         title: "DevOps in Action",
         description:
-            "Understand key DevOps principles like automation, CI/CD, and collaboration—plus how they improve software delivery in real-world teams.",
+            "Understand key DevOps principles like automation, CI/CD, and collaboration-plus how they improve software delivery in real-world teams.",
     },
     {
         icon: <Workflow size={24} />,
@@ -37,7 +37,7 @@ const topics: { icon: ReactNode; title: string; description: string }[] = [
         icon: <Briefcase size={24} />,
         title: "Real-World Use Cases & Project Scenarios",
         description:
-            "Explore practical examples and case studies that show how cloud and DevOps are applied in actual projects—from startups to enterprise systems.",
+            "Explore practical examples and case studies that show how cloud and DevOps are applied in actual projects-from startups to enterprise systems.",
     },
 ];
 

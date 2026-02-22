@@ -7,7 +7,7 @@ const faqs = [
     {
         question: "Who can attend this webinar?",
         answer:
-            "Anyone interested in learning about Cloud Computing and DevOps can attend — whether you're a student, recent graduate, working professional, or career switcher. No prior technical background is required.",
+            "Anyone interested in learning about Cloud Computing and DevOps can attend - whether you're a student, recent graduate, working professional, or career switcher. No prior technical background is required.",
     },
     {
         question: "Is the webinar free?",
@@ -17,7 +17,7 @@ const faqs = [
     {
         question: "What will I gain from this webinar?",
         answer:
-            "You'll gain a clear understanding of AWS & DevOps fundamentals, emerging career trends, real-world use cases, and a practical career kickstart plan — all in one power-packed hour.",
+            "You'll gain a clear understanding of AWS & DevOps fundamentals, emerging career trends, real-world use cases, and a practical career kickstart plan - all in one power-packed hour.",
     },
     {
         question: "How can I join the webinar?",
@@ -32,7 +32,7 @@ const faqs = [
     {
         question: "When do I pay ₹999?",
         answer:
-            "Only if you decide to continue after the first free session. There's absolutely no obligation — attend the free class, experience the teaching, and then decide.",
+            "Only if you decide to continue after the first free session. There's absolutely no obligation - attend the free class, experience the teaching, and then decide.",
     },
     {
         question: "Is coding required?",
@@ -42,7 +42,7 @@ const faqs = [
     {
         question: "Is this suitable for non-IT students?",
         answer:
-            "Absolutely yes. Students from any branch — Commerce, Arts, Science, Engineering — can learn cloud computing. Many of our successful students come from non-IT backgrounds.",
+            "Absolutely yes. Students from any branch - Commerce, Arts, Science, Engineering - can learn cloud computing. Many of our successful students come from non-IT backgrounds.",
     },
 ];
 

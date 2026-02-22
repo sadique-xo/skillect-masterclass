@@ -19,7 +19,7 @@ const courseItems = [
     {
         title: "📍 Online & Offline",
         description:
-            "Attend from anywhere online or join in-person sessions — whatever works best for you.",
+            "Attend from anywhere online or join in-person sessions - whatever works best for you.",
         link: "#course-mode",
     },
     {
@@ -48,13 +48,13 @@ export default function CourseDetails() {
             <div className="container">
                 <div className="course-details__header">
                     <h2 className="section-title reveal">
-                        AWS Fundamentals — Full Course
+                        AWS Fundamentals - Full Course
                     </h2>
                     <div className="reveal">
                         <span className="course-details__price-badge">
                             <span className="course-details__price-original">₹4,999</span>
                             <span className="course-details__price-current">Just ₹999</span>
-                            — Student Special Batch
+                            - Student Special Batch
                         </span>
                     </div>
                     <p className="course-details__subtitle reveal">

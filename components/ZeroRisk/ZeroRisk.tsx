@@ -2,11 +2,11 @@ import "./ZeroRisk.css";
 import { Check } from "lucide-react";
 
 const benefits = [
-    "Zero Risk — Try before you commit",
-    "No Advance Payment — Pay only after the free class",
-    "Transparent Teaching — See the quality firsthand",
-    "Affordable Pricing — Full course at just ₹999",
-    "Career-Focused Learning — Skills that get you hired",
+    "Zero Risk - Try before you commit",
+    "No Advance Payment - Pay only after the free class",
+    "Transparent Teaching - See the quality firsthand",
+    "Affordable Pricing - Full course at just ₹999",
+    "Career-Focused Learning - Skills that get you hired",
 ];
 
 export default function ZeroRisk() {

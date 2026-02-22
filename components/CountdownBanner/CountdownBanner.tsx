@@ -45,7 +45,7 @@ export default function CountdownBanner() {
             <div className="container countdown__inner">
                 <p className="countdown__label reveal">Next Free Session</p>
                 <h2 className="countdown__title reveal">
-                    Limited Seats — Small Batch for Better Guidance
+                    Limited Seats - Small Batch for Better Guidance
                 </h2>
 
                 <div className="countdown__timer reveal">

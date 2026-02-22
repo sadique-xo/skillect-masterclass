@@ -13,7 +13,7 @@ export default function Hero() {
                 <div className="hero__content">
                     <div className="hero__badge">
                         <span className="hero__badge-icon">🔥</span>
-                        Free Webinar — Reserve Your Spot Today
+                        Free Webinar - Reserve Your Spot Today
                     </div>
 
                     <h1 className="hero__title">
@@ -34,7 +34,7 @@ export default function Hero() {
 
                     <p className="hero__description">
                         Join us for a live, 1-hour webinar that breaks down the essentials of
-                        AWS and DevOps—and shows you how to launch a rewarding career in this
+                        AWS and DevOps-and shows you how to launch a rewarding career in this
                         high-growth domain.
                     </p>
 
@@ -72,7 +72,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Right — Video */}
+                {/* Right - Video */}
                 <div className="hero__media">
                     <div className="hero__video-wrapper">
                         <div className="hero__video-container">
