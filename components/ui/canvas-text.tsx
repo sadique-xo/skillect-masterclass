@@ -41,8 +41,10 @@ export function CanvasText({
   const bgRef = useRef<HTMLSpanElement>(null);
   const animationRef = useRef<number>(0);
   const startTimeRef = useRef<number>(0);
+  const [isReady, setIsReady] = useState(false);
   const [bgColor, setBgColor] = useState("#0a0a0a");
   const [resolvedColors, setResolvedColors] = useState<string[]>([]);
+  const lastFrameTimeRef = useRef<number>(0);
 
   const updateColors = useCallback(() => {
     if (bgRef.current) {
@@ -84,8 +86,16 @@ export function CanvasText({
 
     const numLines = Math.floor(height / lineGap) + 10;
     startTimeRef.current = performance.now();
+    lastFrameTimeRef.current = startTimeRef.current;
 
     const animate = (currentTime: number) => {
+      animationRef.current = requestAnimationFrame(animate);
+
+      // Throttle to ~30fps to prevent blinking/stuttering in Safari
+      const elapsedSinceLastFrame = currentTime - lastFrameTimeRef.current;
+      if (elapsedSinceLastFrame < 33.33) return; // ~30fps
+
+      lastFrameTimeRef.current = currentTime;
       const elapsed = (currentTime - startTimeRef.current) / 1000;
       const phase = (elapsed / animationDuration) * Math.PI * 2;
 
@@ -115,9 +125,12 @@ export function CanvasText({
         ctx.stroke();
       }
 
-      textEl.style.backgroundImage = `url(${canvas.toDataURL()})`;
+      // Using default PNG for better sharp rendering in Safari clipping
+      const dataUrl = canvas.toDataURL();
+      textEl.style.backgroundImage = `url(${dataUrl})`;
       textEl.style.backgroundSize = `${width}px ${height}px`;
-      animationRef.current = requestAnimationFrame(animate);
+
+      if (!isReady) setIsReady(true);
     };
 
     animationRef.current = requestAnimationFrame(animate);
@@ -132,6 +145,7 @@ export function CanvasText({
     lineWidth,
     lineGap,
     curveIntensity,
+    isReady,
   ]);
 
   return (
@@ -152,12 +166,17 @@ export function CanvasText({
       <span
         ref={textRef}
         className={cn(
-          "bg-clip-text text-transparent",
+          "transition-opacity duration-300",
+          isReady ? "bg-clip-text text-transparent opacity-100" : "text-blue-600 dark:text-blue-400 opacity-100",
           overlay ? "absolute inset-0" : "inline",
           className,
         )}
         style={{
-          WebkitBackgroundClip: "text",
+          WebkitBackgroundClip: isReady ? "text" : "none",
+          WebkitTextFillColor: isReady ? "transparent" : "inherit",
+          backgroundClip: isReady ? "text" : "none",
+          color: isReady ? "transparent" : "inherit",
+          willChange: isReady ? "background-image" : "auto",
         }}
       >
         {text}

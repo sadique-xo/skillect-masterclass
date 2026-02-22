@@ -98,8 +98,10 @@
 }
 
 .hero__title-line {
-    display: block;
+    display: inline-block;
     white-space: nowrap;
+    position: relative;
+    width: 100%;
 }
 
 .hero__title-gradient {
