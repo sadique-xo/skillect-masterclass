@@ -1,0 +1,117 @@
+.bottom-cta {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f0f6 0%, #f0f5fa 50%, #f5f0f8 100%);
+}
+
+.bottom-cta__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.bottom-cta__shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.12;
+}
+
+.bottom-cta__shape--1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    top: -100px;
+    left: -100px;
+}
+
+.bottom-cta__shape--2 {
+    width: 350px;
+    height: 350px;
+    background: var(--accent);
+    bottom: -80px;
+    right: -80px;
+}
+
+.bottom-cta__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.bottom-cta__title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--secondary);
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.bottom-cta__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bottom-cta__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.bottom-cta__meta-item svg {
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.bottom-cta__form-wrapper {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+}
+
+.bottom-cta__whatsapp {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.bottom-cta__whatsapp-btn {
+    width: 100%;
+    border-color: #25D366;
+    color: #25D366;
+}
+
+.bottom-cta__whatsapp-btn:hover {
+    background: #25D366;
+    color: var(--white);
+    border-color: #25D366;
+}
+
+@media (max-width: 768px) {
+    .bottom-cta {
+        padding: 64px 0;
+    }
+
+    .bottom-cta__inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+    }
+
+    .bottom-cta__title {
+        font-size: 1.75rem;
+    }
+
+    .bottom-cta__meta {
+        align-items: center;
+    }
+}

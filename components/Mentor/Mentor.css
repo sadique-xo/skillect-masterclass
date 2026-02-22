@@ -1,0 +1,100 @@
+.mentor-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 48px;
+    box-shadow: var(--shadow-md);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mentor-card__photo-placeholder {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(108, 20, 87, 0.2);
+}
+
+.mentor-card__photo-initials {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.05em;
+}
+
+.mentor-card__name {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 4px;
+}
+
+.mentor-card__role {
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.mentor-card__bio {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.mentor-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.mentor-card__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(108, 20, 87, 0.06), rgba(22, 81, 141, 0.06));
+    border: 1px solid rgba(108, 20, 87, 0.12);
+    border-radius: var(--radius-full);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--secondary);
+    transition: all var(--transition-fast);
+}
+
+.mentor-card__tag:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .mentor-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 36px 24px;
+        gap: 32px;
+    }
+
+    .mentor-card__photo-placeholder {
+        width: 160px;
+        height: 160px;
+    }
+
+    .mentor-card__photo-initials {
+        font-size: 3rem;
+    }
+
+    .mentor-card__tags {
+        justify-content: center;
+    }
+}

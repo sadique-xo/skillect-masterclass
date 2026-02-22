@@ -1,0 +1,149 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all var(--transition);
+    padding: 16px 0;
+}
+
+.navbar--scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+    padding: 10px 0;
+}
+
+.navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: var(--secondary);
+}
+
+.navbar__logo-icon {
+    font-size: 1.5rem;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navbar__link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.navbar__link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width var(--transition);
+}
+
+.navbar__link:hover {
+    color: var(--primary);
+}
+
+.navbar__link:hover::after {
+    width: 100%;
+}
+
+.navbar__links-cta-mobile {
+    display: none;
+}
+
+.navbar__cta-btn {
+    font-size: 0.875rem;
+    padding: 10px 24px;
+}
+
+.navbar__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 28px;
+    padding: 4px 0;
+    z-index: 1001;
+}
+
+.navbar__hamburger span {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: var(--secondary);
+    border-radius: 2px;
+    transition: all var(--transition);
+}
+
+.navbar__hamburger--open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__hamburger--open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__hamburger--open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+    .navbar__links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition);
+    }
+
+    .navbar__links--open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .navbar__link {
+        font-size: 1.25rem;
+    }
+
+    .navbar__links-cta-mobile {
+        display: block;
+        margin-top: 12px;
+    }
+
+    .navbar__cta-btn {
+        display: none;
+    }
+
+    .navbar__hamburger {
+        display: flex;
+    }
+}
