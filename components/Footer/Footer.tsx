@@ -6,8 +6,16 @@ export default function Footer() {
             <div className="container footer__inner">
                 <div className="footer__brand">
                     <a href="#" className="footer__logo">
-                        <span className="footer__logo-icon">🎯</span>
-                        <span className="footer__logo-text">Skillect</span>
+                        <img
+                            src="/images/logo/Logo.png"
+                            alt="Skillect Logo"
+                            className="footer__logo-light"
+                        />
+                        <img
+                            src="/images/logo/Icon-Dark Theme.png"
+                            alt="Skillect Logo"
+                            className="footer__logo-dark"
+                        />
                     </a>
                     <p className="footer__tagline">
                         Empowering careers in Cloud & DevOps through expert-led mentorship.

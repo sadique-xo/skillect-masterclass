@@ -33,8 +33,16 @@ export default function Navbar() {
         <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
             <div className="navbar__inner container">
                 <a href="#" className="navbar__logo">
-                    <span className="navbar__logo-icon">🎯</span>
-                    <span className="navbar__logo-text">Skillect</span>
+                    <img
+                        src="/images/logo/Logo.png"
+                        alt="Skillect Logo"
+                        className="navbar__logo-light"
+                    />
+                    <img
+                        src="/images/logo/Icon-Dark Theme.png"
+                        alt="Skillect Logo"
+                        className="navbar__logo-dark"
+                    />
                 </a>
 
                 <ul className={`navbar__links ${mobileOpen ? "navbar__links--open" : ""}`}>

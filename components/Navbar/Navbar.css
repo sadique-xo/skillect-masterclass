@@ -12,8 +12,11 @@
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
-    padding: 10px 0;
+    border-radius: 9999px;
+    padding: 10px 24px;
+    margin: 16px auto;
+    width: 95%;
+    max-width: 1200px;
 }
 
 .navbar__inner {
@@ -25,14 +28,25 @@
 .navbar__logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 800;
-    font-size: 1.35rem;
-    color: var(--secondary);
 }
 
-.navbar__logo-icon {
-    font-size: 1.5rem;
+.navbar__logo-light,
+.navbar__logo-dark {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar__logo-dark {
+    display: none;
+}
+
+.dark .navbar__logo-light {
+    display: none;
+}
+
+.dark .navbar__logo-dark {
+    display: block;
 }
 
 .navbar__links {
@@ -175,7 +189,6 @@
 /* ---------- Dark Mode ---------- */
 .dark .navbar--scrolled {
     background: rgba(15, 15, 23, 0.85);
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
 }
 
 .dark .navbar__hamburger span {

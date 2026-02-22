@@ -14,15 +14,26 @@
 .footer__logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 800;
-    font-size: 1.35rem;
-    color: var(--white);
     margin-bottom: 12px;
 }
 
-.footer__logo-icon {
-    font-size: 1.5rem;
+.footer__logo-light,
+.footer__logo-dark {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer__logo-dark {
+    display: none;
+}
+
+.dark .footer__logo-light {
+    display: none;
+}
+
+.dark .footer__logo-dark {
+    display: block;
 }
 
 .footer__tagline {
