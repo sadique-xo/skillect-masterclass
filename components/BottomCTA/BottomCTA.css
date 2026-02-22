@@ -2,7 +2,7 @@
     position: relative;
     padding: 100px 0;
     overflow: hidden;
-    background: linear-gradient(135deg, #f8f0f6 0%, #f0f5fa 50%, #f5f0f8 100%);
+    background: linear-gradient(135deg, #EFEBFD 0%, #F6EBFF 50%, #f0ecf5 100%);
 }
 
 .bottom-cta__bg {
@@ -114,4 +114,9 @@
     .bottom-cta__meta {
         align-items: center;
     }
+}
+
+/* ---------- Dark Mode ---------- */
+.dark .bottom-cta {
+    background: linear-gradient(135deg, #12101c 0%, #17142a 50%, #141120 100%);
 }

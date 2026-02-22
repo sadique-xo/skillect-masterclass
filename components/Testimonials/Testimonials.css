@@ -83,3 +83,8 @@
         min-width: 280px;
     }
 }
+
+/* ---------- Dark Mode ---------- */
+.dark .testimonial-card__avatar {
+    color: #ffffff;
+}

@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    box-shadow: 0 8px 32px rgba(108, 20, 87, 0.2);
+    box-shadow: 0 8px 32px rgba(105, 51, 255, 0.2);
 }
 
 .mentor-card__photo-initials {
@@ -62,8 +62,8 @@
     display: inline-flex;
     align-items: center;
     padding: 6px 14px;
-    background: linear-gradient(135deg, rgba(108, 20, 87, 0.06), rgba(22, 81, 141, 0.06));
-    border: 1px solid rgba(108, 20, 87, 0.12);
+    background: linear-gradient(135deg, rgba(105, 51, 255, 0.06), rgba(160, 51, 255, 0.06));
+    border: 1px solid rgba(105, 51, 255, 0.12);
     border-radius: var(--radius-full);
     font-size: 0.8125rem;
     font-weight: 500;
@@ -97,4 +97,22 @@
     .mentor-card__tags {
         justify-content: center;
     }
+}
+
+/* ---------- Dark Mode ---------- */
+.dark .mentor-card__tag {
+    background: linear-gradient(135deg, rgba(135, 92, 255, 0.12), rgba(179, 92, 255, 0.12));
+    border-color: rgba(135, 92, 255, 0.2);
+}
+
+.dark .mentor-card__photo-placeholder {
+    box-shadow: 0 8px 32px rgba(135, 92, 255, 0.3);
+}
+
+.dark .mentor-card__photo-initials {
+    color: #ffffff;
+}
+
+.dark .mentor-card__tag:hover {
+    color: #ffffff;
 }

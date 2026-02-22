@@ -75,3 +75,14 @@
         margin: 0 auto;
     }
 }
+
+/* ---------- Dark Mode ---------- */
+.dark .footer {
+    background: #0c0c14;
+}
+
+.dark .footer,
+.dark .footer__logo,
+.dark .mentor-card__photo-initials {
+    color: #ffffff;
+}

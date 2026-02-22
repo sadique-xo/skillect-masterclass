@@ -9,21 +9,21 @@
 
 .course-details__header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 56px;
 }
 
 .course-details__price-badge {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: linear-gradient(135deg, #6C1457 0%, #16518D 100%);
+    background: linear-gradient(135deg, #6933FF 0%, #A033FF 100%);
     color: var(--white);
     padding: 16px 32px;
     border-radius: var(--radius-full);
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 32px;
-    box-shadow: 0 4px 20px rgba(108, 20, 87, 0.3);
+    box-shadow: 0 4px 20px rgba(105, 51, 255, 0.3);
 }
 
 .course-details__price-original {
@@ -45,10 +45,124 @@
     line-height: 1.7;
 }
 
-/* Responsive */
+/* ---------- Spotlight Cards Grid ---------- */
+
+.course-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.course-card-spotlight {
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+    padding: 32px !important;
+    border-radius: 16px !important;
+    border-color: rgba(105, 51, 255, 0.15) !important;
+    background: linear-gradient(145deg, #0d0d1a 0%, #111128 50%, #0a0a18 100%) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card-spotlight:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(105, 51, 255, 0.2);
+}
+
+.course-card__icon-wrapper {
+    position: relative;
+    z-index: 20;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(105, 51, 255, 0.2), rgba(160, 51, 255, 0.2));
+    border-radius: 14px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(105, 51, 255, 0.15);
+}
+
+.course-card__icon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.course-card__title {
+    position: relative;
+    z-index: 20;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.course-card__description {
+    position: relative;
+    z-index: 20;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.course-card__highlights {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    list-style: none;
+    padding: 0;
+}
+
+.course-card__highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.course-card__check-icon {
+    width: 16px;
+    height: 16px;
+    color: #6933FF;
+    flex-shrink: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .course-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .course-details__price-badge {
         font-size: 1rem;
         padding: 12px 24px;
     }
+
+    .course-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .course-card-spotlight {
+        min-height: auto;
+        padding: 24px !important;
+    }
+}
+
+/* ---------- Dark Mode ---------- */
+.dark .course-details__price-badge {
+    box-shadow: 0 4px 20px rgba(135, 92, 255, 0.35);
+    color: #ffffff;
+}
+
+.dark .course-card__title {
+    color: #ffffff;
 }

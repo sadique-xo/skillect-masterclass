@@ -24,20 +24,24 @@ function getTimeRemaining() {
 }
 
 export default function CountdownBanner() {
-    const [time, setTime] = useState(getTimeRemaining());
+    const [time, setTime] = useState<ReturnType<typeof getTimeRemaining> | null>(null);
 
     useEffect(() => {
+        // Set initial value on client to avoid hydration mismatch
+        setTime(getTimeRemaining());
         const interval = setInterval(() => {
             setTime(getTimeRemaining());
         }, 1000);
         return () => clearInterval(interval);
     }, []);
 
+    const display = time ?? { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
     const units = [
-        { value: time.days, label: "Days" },
-        { value: time.hours, label: "Hours" },
-        { value: time.minutes, label: "Minutes" },
-        { value: time.seconds, label: "Seconds" },
+        { value: display.days, label: "Days" },
+        { value: display.hours, label: "Hours" },
+        { value: display.minutes, label: "Minutes" },
+        { value: display.seconds, label: "Seconds" },
     ];
 
     return (

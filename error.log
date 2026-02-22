@@ -1,0 +1,332 @@
+there are 3 errors
+
+## Error Type
+Console Error
+
+## Error Message
+A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <CountdownBanner>
+      <section className="countdown" id="countdown">
+        <div className="container ...">
+          <p>
+          <h2>
+          <div className="countdown_...">
+            <div>
+            <div>
+            <div>
+            <div style={{display:"flex", ...}}>
+              <div className="countdown_...">
+                <div className="countdown_...">
+                  <Counter value={18} fontSize={36} padding={0} gap={2} textColor="white" fontWeight="800" places={[...]} ...>
+                    <span style={{position:"...", ...}}>
+                      <span style={{fontSize:36, ...}}>
+                        <Digit>
+                        <Digit place={1} value={18} height={36} digitStyle={undefined}>
+                          <span className="relative i..." style={{height:36, ...}}>
+                            <Number mv={{...}} number={0} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(72px)"
+-                                   transform: "translateY(36px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 0
+                            <Number mv={{...}} number={1} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(108px)"
+-                                   transform: "translateY(72px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 1
+                            <Number mv={{...}} number={2} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(144px)"
+-                                   transform: "translateY(108px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 2
+                            <Number mv={{...}} number={3} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(180px)"
+-                                   transform: "translateY(144px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 3
+                            <Number mv={{...}} number={4} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(-144px)"
+-                                   transform: "translateY(180px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 4
+                            <Number mv={{...}} number={5} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(-108px)"
+-                                   transform: "translateY(-144px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 5
+                            <Number mv={{...}} number={6} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(-72px)"
+-                                   transform: "translateY(-108px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 6
+                            <Number mv={{...}} number={7} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(-36px)"
+-                                   transform: "translateY(-72px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 7
+                            <Number mv={{...}} number={8} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "none"
+-                                   transform: "translateY(-36px)"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 8
+                            <Number mv={{...}} number={9} height={36}>
+                              <motion.span style={{position:"...", ...}}>
+                                <span
+                                  style={{
++                                   position: "absolute"
+-                                   position: "absolute"
++                                   inset: 0
++                                   display: "flex"
+-                                   display: "flex"
++                                   alignItems: "center"
++                                   justifyContent: "center"
++                                   transform: "translateY(36px)"
+-                                   transform: "none"
+-                                   top: "0px"
+-                                   right: "0px"
+-                                   bottom: "0px"
+-                                   left: "0px"
+-                                   align-items: "center"
+-                                   justify-content: "center"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 9
+                      ...
+                ...
+          ...
+
+
+
+    at createConsoleError (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_f3530cac._.js:2199:71)
+    at handleConsoleError (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_f3530cac._.js:2980:54)
+    at console.error (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_f3530cac._.js:3124:57)
+    at <unknown> (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:3469:25)
+    at runWithFiberInDEV (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:965:74)
+    at emitPendingHydrationWarnings (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:3468:13)
+    at completeWork (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:6897:102)
+    at runWithFiberInDEV (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:965:131)
+    at completeUnitOfWork (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9627:23)
+    at performUnitOfWork (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9564:28)
+    at workLoopConcurrentByScheduler (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9558:58)
+    at renderRootConcurrent (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9541:71)
+    at performWorkOnRoot (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9068:150)
+    at performWorkOnRootViaSchedulerTask (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js:2647:64)
+    at span (<anonymous>:null:null)
+    at useRender (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_framer-motion_dist_es_ad616922._.js:516:191)
+    at MotionDOMComponent (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_framer-motion_dist_es_ad616922._.js:1180:215)
+    at Number (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2919:214)
+    at <unknown> (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2980:222)
+    at Array.from (<anonymous>:null:null)
+    at Digit (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2978:25)
+    at <unknown> (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:3056:249)
+    at Array.map (<anonymous>:null:null)
+    at Counter (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:3056:34)
+    at <unknown> (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:3214:257)
+    at Array.map (<anonymous>:null:null)
+    at CountdownBanner (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:3203:37)
+    at Home (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:3950:223)
+    at ClientPageRoot (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_be32b49c._.js:2403:50)
+
+Next.js version: 16.1.6 (Turbopack)
+
+
+
+## Error Type
+Console TypeError
+
+## Error Message
+Cannot read properties of undefined (reading 'getElapsedTime')
+
+
+    at ShaderMaterial.useFrame (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2087:37)
+    at useFrame.useIsomorphicLayoutEffect.wrappedCallback [as callback] (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_%40react-three_fiber_dist_index_mjs_d726e9bf._.js:2786:46)
+    at _Scheduler.tickRoot (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_%40react-three_fiber_dist_index_mjs_d726e9bf._.js:2634:21)
+    at _Scheduler.executeFrame (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_%40react-three_fiber_dist_index_mjs_d726e9bf._.js:2588:18)
+    at <unknown> (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_%40react-three_fiber_dist_index_mjs_d726e9bf._.js:2046:18)
+    at Canvas (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_%40react-three_fiber_dist_index_mjs_d726e9bf._.js:17463:213)
+    at Shader (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2213:214)
+    at DotMatrix (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2027:214)
+    at CanvasRevealEffect (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:1889:229)
+    at CardSpotlight (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2292:243)
+    at <unknown> (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2514:264)
+    at Array.map (<anonymous>:null:null)
+    at CourseDetails (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:2514:43)
+    at Home (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/_b53960e8._.js:3935:223)
+    at ClientPageRoot (file:///Users/sadique/Documents/Code Projects - Local Repo/skillect-masterclass/.next/dev/static/chunks/node_modules_next_dist_be32b49c._.js:2403:50)
+
+Next.js version: 16.1.6 (Turbopack)

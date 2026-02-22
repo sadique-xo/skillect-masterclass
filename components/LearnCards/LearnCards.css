@@ -40,7 +40,7 @@
     width: 52px;
     height: 52px;
     border-radius: var(--radius-md);
-    background: linear-gradient(135deg, rgba(108, 20, 87, 0.08), rgba(22, 81, 141, 0.08));
+    background: linear-gradient(135deg, rgba(105, 51, 255, 0.08), rgba(160, 51, 255, 0.08));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,4 +77,9 @@
     .learn-card {
         padding: 24px 20px;
     }
+}
+
+/* ---------- Dark Mode ---------- */
+.dark .learn-card__icon {
+    background: linear-gradient(135deg, rgba(135, 92, 255, 0.18), rgba(179, 92, 255, 0.18));
 }

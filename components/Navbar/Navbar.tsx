@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -58,6 +59,8 @@ export default function Navbar() {
                 <a href="#register" className="btn btn-primary navbar__cta-btn">
                     Register Now
                 </a>
+
+                <AnimatedThemeToggler className="navbar__theme-toggle" />
 
                 <button
                     className={`navbar__hamburger ${mobileOpen ? "navbar__hamburger--open" : ""}`}
