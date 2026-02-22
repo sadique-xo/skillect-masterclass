@@ -44,6 +44,7 @@ export function CanvasText({
   const [isReady, setIsReady] = useState(false);
   const [bgColor, setBgColor] = useState("#0a0a0a");
   const [resolvedColors, setResolvedColors] = useState<string[]>([]);
+  const [isSafari, setIsSafari] = useState(false);
   const lastFrameTimeRef = useRef<number>(0);
 
   const updateColors = useCallback(() => {
@@ -56,6 +57,11 @@ export function CanvasText({
   }, [colors]);
 
   useEffect(() => {
+    // Detect Safari
+    const ua = navigator.userAgent.toLowerCase();
+    const isSafariCheck = ua.indexOf("safari") > -1 && ua.indexOf("chrome") === -1;
+    setIsSafari(isSafariCheck);
+
     updateColors();
 
     const observer = new MutationObserver(updateColors);
@@ -70,7 +76,10 @@ export function CanvasText({
   useEffect(() => {
     const canvas = canvasRef.current;
     const textEl = textRef.current;
-    if (!canvas || !textEl || resolvedColors.length === 0) return;
+    if (!canvas || !textEl || resolvedColors.length === 0 || isSafari) {
+      if (isSafari) setIsReady(true);
+      return;
+    }
 
     const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
@@ -146,10 +155,24 @@ export function CanvasText({
     lineGap,
     curveIntensity,
     isReady,
+    isSafari,
   ]);
+
+  // Safari stable fallback gradient
+  const safariStyle = isSafari ? {
+    backgroundImage: `linear-gradient(90deg, ${resolvedColors[0] || "#3b82f6"}, ${resolvedColors[2] || "#8b5cf6"}, ${resolvedColors[0] || "#3b82f6"})`,
+    backgroundSize: "200% auto",
+    animation: "shine 3s linear infinite",
+  } : {};
 
   return (
     <span className={cn("relative inline", overlay && "absolute inset-0")}>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes shine {
+          to { background-position: 200% center; }
+        }
+      `}} />
       <span
         ref={bgRef}
         className={cn(
@@ -176,7 +199,8 @@ export function CanvasText({
           WebkitTextFillColor: isReady ? "transparent" : "inherit",
           backgroundClip: isReady ? "text" : "none",
           color: isReady ? "transparent" : "inherit",
-          willChange: isReady ? "background-image" : "auto",
+          willChange: isReady && !isSafari ? "background-image" : "auto",
+          ...safariStyle,
         }}
       >
         {text}
