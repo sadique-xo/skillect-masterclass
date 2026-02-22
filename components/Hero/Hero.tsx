@@ -18,25 +18,28 @@ export default function Hero() {
                     </div>
 
                     <h1 className="hero__title">
-                        Unlock Your Future in{" "}
-                        <CanvasText
-                            text="Cloud & DevOps"
-                            backgroundClassName="bg-blue-600 dark:bg-blue-700"
-                            colors={[
-                                "rgba(0, 153, 255, 1)",
-                                "rgba(0, 153, 255, 0.9)",
-                                "rgba(0, 153, 255, 0.8)",
-                                "rgba(0, 153, 255, 0.7)",
-                                "rgba(0, 153, 255, 0.6)",
-                                "rgba(0, 153, 255, 0.5)",
-                                "rgba(0, 153, 255, 0.4)",
-                                "rgba(0, 153, 255, 0.3)",
-                                "rgba(0, 153, 255, 0.2)",
-                                "rgba(0, 153, 255, 0.1)",
-                            ]}
-                            lineGap={4}
-                            animationDuration={20}
-                        />
+                        <span className="hero__title-line">
+                            Your{" "}
+                            <CanvasText
+                                text="Cloud & DevOps"
+                                backgroundClassName="bg-blue-600 dark:bg-blue-700"
+                                colors={[
+                                    "rgba(0, 153, 255, 1)",
+                                    "rgba(0, 153, 255, 0.9)",
+                                    "rgba(0, 153, 255, 0.8)",
+                                    "rgba(0, 153, 255, 0.7)",
+                                    "rgba(0, 153, 255, 0.6)",
+                                    "rgba(0, 153, 255, 0.5)",
+                                    "rgba(0, 153, 255, 0.4)",
+                                    "rgba(0, 153, 255, 0.3)",
+                                    "rgba(0, 153, 255, 0.2)",
+                                    "rgba(0, 153, 255, 0.1)",
+                                ]}
+                                lineGap={4}
+                                animationDuration={20}
+                            />
+                        </span>
+                        <span className="hero__title-line">Career Starts Here</span>
                     </h1>
 
                     <div className="hero__meta">
@@ -51,14 +54,12 @@ export default function Hero() {
                     </div>
 
                     <p className="hero__description">
-                        Join us for a live, 1-hour webinar that breaks down the essentials of
-                        AWS and DevOps-and shows you how to launch a rewarding career in this
-                        high-growth domain.
+                        A free, no-fluff webinar that gives you a clear roadmap to break into cloud - from the skills that matter to the jobs that pay.
                     </p>
 
                     <div className="hero__actions">
                         <a href="#register" className="btn btn-primary btn-lg">
-                            Register Now for Free
+                            Save My Free Spot
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                         </a>
                         <a

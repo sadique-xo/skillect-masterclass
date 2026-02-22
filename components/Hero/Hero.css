@@ -89,10 +89,17 @@
 .hero__title {
     font-size: 3.25rem;
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.2;
     color: var(--secondary);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     letter-spacing: -0.02em;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__title-line {
+    display: block;
+    white-space: nowrap;
 }
 
 .hero__title-gradient {
@@ -256,10 +263,6 @@
 
     .hero__stats {
         justify-content: center;
-    }
-
-    .hero__media {
-        order: -1;
     }
 
 

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import "./Mentor.css";
+import { MagicCard } from "@/components/ui/magic-card";
 
 const tags = [
     "AWS & DevOps Certified",
@@ -19,45 +22,51 @@ export default function Mentor() {
                     Learn from someone who&apos;s been in the trenches
                 </p>
 
-                <div className="mentor-card reveal">
-                    {/* Photo side */}
-                    <div className="mentor-card__photo">
-                        <div className="mentor-card__photo-wrapper">
-                            <Image
-                                src="/images/Jithin Medium.png"
-                                alt="Jithin Kannan"
-                                width={220}
-                                height={220}
-                                className="mentor-card__image"
-                            />
+                <MagicCard
+                    className="mentor-card reveal"
+                    gradientColor="rgba(105, 51, 255, 0.08)"
+                >
+                    <div className="mentor-card__content">
+                        {/* Photo side */}
+                        <div className="mentor-card__photo">
+                            <div className="mentor-card__photo-wrapper">
+                                <Image
+                                    src="/images/Jithin Medium.png"
+                                    alt="Jithin Kannan"
+                                    width={220}
+                                    height={220}
+                                    className="mentor-card__image"
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Info side */}
-                    <div className="mentor-card__info">
-                        <h3 className="mentor-card__name">Jithin Kannan</h3>
-                        <p className="mentor-card__role">
-                            Founder, Skillect · DevOps & Cloud Specialist
-                        </p>
-                        <p className="mentor-card__bio">
-                            Jithin Kannan has over eight years of experience across DevOps,
-                            AWS, Azure, Kubernetes, Cassandra, and Python. As the founder of
-                            Skillect, he brings a deep, real-world understanding of cloud and
-                            data systems, having worked in key roles at Mavenir and Cognizant.
-                            Through his mentorship and content, he helps professionals grow
-                            with practical skills, career strategy, and the mindset needed to
-                            thrive in modern tech roles.
-                        </p>
-                        <div className="mentor-card__tags">
-                            {tags.map((tag, i) => (
-                                <span key={i} className="mentor-card__tag">
-                                    {tag}
-                                </span>
-                            ))}
+                        {/* Info side */}
+                        <div className="mentor-card__info">
+                            <h3 className="mentor-card__name">Jithin Kannan</h3>
+                            <p className="mentor-card__role">
+                                Founder, Skillect · DevOps & Cloud Specialist
+                            </p>
+                            <p className="mentor-card__bio">
+                                Jithin Kannan has over eight years of experience across DevOps,
+                                AWS, Azure, Kubernetes, Cassandra, and Python. As the founder of
+                                Skillect, he brings a deep, real-world understanding of cloud and
+                                data systems, having worked in key roles at Mavenir and Cognizant.
+                                Through his mentorship and content, he helps professionals grow
+                                with practical skills, career strategy, and the mindset needed to
+                                thrive in modern tech roles.
+                            </p>
+                            <div className="mentor-card__tags">
+                                {tags.map((tag, i) => (
+                                    <span key={i} className="mentor-card__tag">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </MagicCard>
             </div>
         </section>
     );
 }
+
