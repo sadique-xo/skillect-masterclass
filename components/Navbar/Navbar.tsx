@@ -34,7 +34,7 @@ export default function Navbar() {
             <div className="navbar__inner container">
                 <a href="#" className="navbar__logo">
                     <img
-                        src="/images/logo/logo.png"
+                        src="/images/logo/skillect-logo.png"
                         alt="Skillect Logo"
                         className="navbar__logo-light"
                     />

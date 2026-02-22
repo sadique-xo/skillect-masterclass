@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Skillect",
     images: [
       {
-        url: "/images/logo/logo.png",
+        url: "/images/logo/skillect-logo.png",
         width: 1200,
         height: 630,
         alt: "Skillect Logo",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Skillect Masterclass - Unlock Your Future in Cloud & DevOps",
     description:
       "Free live webinar breaking down AWS & DevOps essentials. Reserve your spot today!",
-    images: ["/images/logo/logo.png"],
+    images: ["/images/logo/skillect-logo.png"],
   },
 };
 

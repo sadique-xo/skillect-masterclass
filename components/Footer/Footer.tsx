@@ -7,12 +7,12 @@ export default function Footer() {
                 <div className="footer__brand">
                     <a href="#" className="footer__logo">
                         <img
-                            src="/images/logo/Logo.png"
+                            src="/images/logo/skillect-logo.png"
                             alt="Skillect Logo"
                             className="footer__logo-light"
                         />
                         <img
-                            src="/images/logo/Icon-Dark Theme.png"
+                            src="/images/logo/icon-dark.png"
                             alt="Skillect Logo"
                             className="footer__logo-dark"
                         />
