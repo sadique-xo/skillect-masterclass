@@ -17,19 +17,25 @@ export const metadata: Metadata = {
     icon: [
       {
         url: "/images/logo/icon-light.png",
-        href: "/images/logo/icon-light.png",
+        type: "image/png",
+      },
+      {
+        url: "/images/logo/icon-light.svg",
+        type: "image/svg+xml",
       },
       {
         media: "(prefers-color-scheme: light)",
         url: "/images/logo/icon-light.png",
-        href: "/images/logo/icon-light.png",
+        type: "image/png",
       },
       {
         media: "(prefers-color-scheme: dark)",
         url: "/images/logo/icon-dark.png",
-        href: "/images/logo/icon-dark.png",
+        type: "image/png",
       },
     ],
+    shortcut: "/images/logo/icon-light.png",
+    apple: "/images/logo/icon-light.png",
   },
   openGraph: {
     title: "Skillect Masterclass - Unlock Your Future in Cloud & DevOps",
