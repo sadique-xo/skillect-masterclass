@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { DateTimePicker } from "@/components/ui/date-time-picker";
 import "./admin.css";
 
@@ -38,6 +39,9 @@ export default function AdminPage() {
 
     return (
         <div className="admin">
+            <Link href="/" className="admin__back">
+                ← Back to Homepage
+            </Link>
             <div className="admin__card">
                 <div className="admin__header">
                     <h1 className="admin__title">Webinar Settings</h1>
@@ -83,10 +87,10 @@ export default function AdminPage() {
                         {status.message && (
                             <div
                                 className={`admin__status ${status.type === "error"
-                                        ? "admin__status--error"
-                                        : status.type === "success"
-                                            ? "admin__status--success"
-                                            : "admin__status--loading"
+                                    ? "admin__status--error"
+                                    : status.type === "success"
+                                        ? "admin__status--success"
+                                        : "admin__status--loading"
                                     }`}
                             >
                                 {status.message}
