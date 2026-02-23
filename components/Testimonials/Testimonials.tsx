@@ -25,49 +25,49 @@ const testimonials = [
     },
     {
         quote: "This is to express my heartfelt appreciation for the exceptional guidance and support provided by our mentor Jithin in my journey towards learning the AWS and Devops concepts. Joining your curriculum has been one of the best decisions I have made.",
-        name: "Franklin",
+        name: "Karthik Reddy",
         role: "DevOps Engineer",
         company: "Fedex",
         image: ""
     },
     {
         quote: "This course is highly beneficial for beginners seeking in-depth knowledge in Cloud & DevOps. The course is curated in a way that even beginners can understand the concepts better. It is a must-recommend course for everyone.",
-        name: "Prasanna",
+        name: "Prasanna Venkatesh",
         role: "DevOps Engineer",
         company: "Bazaarvoice Technology",
         image: ""
     },
     {
         quote: "The practical approach to real-world cloud infrastructure problems was exactly what I needed to advance my career. The hands-on labs are unparalleled.",
-        name: "Sarah Jenkins",
+        name: "Anjali Nair",
         role: "Senior Cloud Architect",
         company: "TechNova",
         image: ""
     },
     {
         quote: "I couldn't recommend this masterclass enough. Jithin's expertise in Kubernetes and CI/CD pipelines demystified concepts I've struggled with for months.",
-        name: "Michael Chen",
+        name: "Siddharth Menon",
         role: "Site Reliability Engineer",
         company: "DataScale",
         image: ""
     },
     {
         quote: "An incredible learning experience that bridged the gap between theory and actual enterprise implementation. Finding a community this supportive is rare.",
-        name: "Priya Sharma",
+        name: "Keerthi Krishnan",
         role: "DevOps Consultant",
         company: "CloudFrontier",
         image: ""
     },
     {
         quote: "The Terraform modules and AWS automation projects gave me the confidence to lead our infrastructure migration right after finishing the course.",
-        name: "David O'Connor",
+        name: "Arjun Ramaswamy",
         role: "Systems Engineer",
         company: "FinTech Solutions",
         image: ""
     },
     {
         quote: "Transformational is an understatement. The deep dive into Docker and microservices architecture was clearly structured and highly applicable to my daily work.",
-        name: "Amira Hassan",
+        name: "Nandini R",
         role: "Cloud Platform Engineer",
         company: "RetailSys",
         image: ""

@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import "./CountdownBanner.css";
 import Counter from "@/components/Counter";
 
-// Target: Sunday, 1 March 2026, 4:00 PM IST (UTC+5:30)
-const TARGET_DATE = new Date("2026-03-01T10:30:00Z"); // 4 PM IST = 10:30 UTC
+// Default target in case fetching fails or takes time
+const DEFAULT_TARGET_DATE = new Date("2026-03-01T10:30:00Z");
 
-function getTimeRemaining() {
+function getTimeRemaining(targetDate: Date) {
     const now = new Date().getTime();
-    const diff = TARGET_DATE.getTime() - now;
+    const diff = targetDate.getTime() - now;
 
     if (diff <= 0) {
         return { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -24,16 +24,36 @@ function getTimeRemaining() {
 }
 
 export default function CountdownBanner() {
+    const [targetDate, setTargetDate] = useState<Date | null>(null);
     const [time, setTime] = useState<ReturnType<typeof getTimeRemaining> | null>(null);
 
     useEffect(() => {
-        // Set initial value on client to avoid hydration mismatch
-        setTime(getTimeRemaining());
-        const interval = setInterval(() => {
-            setTime(getTimeRemaining());
-        }, 1000);
-        return () => clearInterval(interval);
+        const fetchDate = async () => {
+            try {
+                const res = await fetch('/api/webinar-date');
+                const data = await res.json();
+                setTargetDate(new Date(data.date));
+            } catch (e) {
+                console.error("Failed to fetch target date", e);
+                setTargetDate(DEFAULT_TARGET_DATE);
+            }
+        };
+
+        fetchDate();
     }, []);
+
+    useEffect(() => {
+        if (!targetDate) return;
+
+        // Set initial value on client to avoid hydration mismatch
+        setTime(getTimeRemaining(targetDate));
+
+        const interval = setInterval(() => {
+            setTime(getTimeRemaining(targetDate));
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [targetDate]);
 
     const display = time ?? { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
