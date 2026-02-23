@@ -16,15 +16,15 @@ export default function BottomCTA() {
                 const d = new Date(data.date);
                 setWebinarDate(format(d, "EEEE, d MMMM yyyy"));
                 // Format something like "4 PM - 5 PM" roughly based on the time
-                const startHour = format(d, "h a");
+                const startHour = format(d, "h:mm a");
                 const dEnd = new Date(d);
                 dEnd.setHours(d.getHours() + 1);
-                const endHour = format(dEnd, "h a");
+                const endHour = format(dEnd, "h:mm a");
                 setWebinarTime(`${startHour} - ${endHour}`);
             } catch (e) {
                 console.error("Failed to fetch date", e);
                 setWebinarDate("Sunday, 1 March 2026");
-                setWebinarTime("4 PM - 5 PM");
+                setWebinarTime("4:00 PM - 5:00 PM");
             }
         };
         fetchDate();

@@ -117,7 +117,7 @@ video {
   display: block;
 }
 
-button {
+button:not([data-slot]) {
   border: none;
   background: none;
   cursor: pointer;

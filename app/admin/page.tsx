@@ -2,19 +2,9 @@
 
 import { useState } from "react";
 import { DateTimePicker } from "@/components/ui/date-time-picker";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
+import "./admin.css";
 
 export default function AdminPage() {
-    // Use a Date object here instead of a raw string
     const [date, setDate] = useState<Date | undefined>(new Date("2026-03-01T10:30:00Z"));
     const [password, setPassword] = useState("");
     const [status, setStatus] = useState<{ type: "success" | "error" | "loading" | null; message: string }>({ type: null, message: "" });
@@ -26,7 +16,6 @@ export default function AdminPage() {
         setStatus({ type: "loading", message: "Updating..." });
 
         try {
-            // The date state is a Date object, meaning we can natively use it
             const formattedDate = date.toISOString();
 
             const res = await fetch("/api/admin", {
@@ -48,64 +37,64 @@ export default function AdminPage() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50/50 p-4">
-            <Card className="w-full max-w-md shadow-lg border-muted">
-                <CardHeader className="text-center pb-6">
-                    <CardTitle className="text-2xl font-bold">Webinar Settings</CardTitle>
-                    <CardDescription>
+        <div className="admin">
+            <div className="admin__card">
+                <div className="admin__header">
+                    <h1 className="admin__title">Webinar Settings</h1>
+                    <p className="admin__description">
                         Update the date and time for your next free session.
-                    </CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                        <div className="flex flex-col gap-2">
-                            <Label htmlFor="date-picker" className="font-semibold text-foreground">
-                                Next Webinar Date & Time
-                            </Label>
+                    </p>
+                </div>
+                <div className="admin__body">
+                    <form onSubmit={handleSubmit} className="admin__form">
+                        <div className="admin__field">
+                            <label className="admin__label">
+                                Next Webinar Date &amp; Time
+                            </label>
                             <DateTimePicker date={date} setDate={setDate} />
-                            <p className="text-xs text-muted-foreground mt-1">
+                            <p className="admin__hint">
                                 The time you select is local and will be converted to UTC for users worldwide.
                             </p>
                         </div>
 
-                        <div className="flex flex-col gap-2">
-                            <Label htmlFor="password" className="font-semibold text-foreground">
+                        <div className="admin__field">
+                            <label htmlFor="password" className="admin__label">
                                 Admin Password
-                            </Label>
-                            <Input
+                            </label>
+                            <input
                                 id="password"
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                                 placeholder="Enter password..."
-                                className="w-full"
+                                className="admin__input"
                             />
                         </div>
 
-                        <Button
+                        <button
                             type="submit"
                             disabled={status.type === "loading" || !date || !password}
-                            className="w-full mt-2 font-semibold"
+                            className="admin__submit"
                         >
                             {status.type === "loading" ? "Saving Changes..." : "Update Date"}
-                        </Button>
+                        </button>
 
                         {status.message && (
                             <div
-                                className={`p-3 mt-2 text-sm text-center rounded-md ${status.type === "error"
-                                    ? "bg-red-50 text-red-700 border border-red-200"
-                                    : status.type === "success"
-                                        ? "bg-green-50 text-green-700 border border-green-200"
-                                        : "bg-gray-50 text-gray-700"
+                                className={`admin__status ${status.type === "error"
+                                        ? "admin__status--error"
+                                        : status.type === "success"
+                                            ? "admin__status--success"
+                                            : "admin__status--loading"
                                     }`}
                             >
                                 {status.message}
                             </div>
                         )}
                     </form>
-                </CardContent>
-            </Card>
+                </div>
+            </div>
         </div>
     );
 }

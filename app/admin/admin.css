@@ -1,0 +1,545 @@
+/* ============================================
+   Admin Page – Webinar Settings
+   Black & white minimal design
+   ============================================ */
+
+.admin {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    padding: 24px;
+}
+
+/* ---------- Card ---------- */
+.admin__card {
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.admin__header {
+    text-align: center;
+    padding: 32px 32px 0;
+}
+
+.admin__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+.admin__description {
+    font-size: 0.875rem;
+    color: #666666;
+    line-height: 1.5;
+}
+
+.admin__body {
+    padding: 28px 32px 32px;
+}
+
+.admin__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ---------- Field ---------- */
+.admin__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin__label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 0.01em;
+}
+
+.admin__hint {
+    font-size: 0.75rem;
+    color: #888888;
+    margin-top: 2px;
+}
+
+/* ---------- Date-Time Picker Overrides ---------- */
+.admin__date-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #111111;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin__date-trigger:hover {
+    border-color: #999999;
+}
+
+.admin__date-trigger:focus-visible {
+    outline: none;
+    border-color: #111111;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.admin__date-trigger svg {
+    width: 16px;
+    height: 16px;
+    color: #666666;
+    flex-shrink: 0;
+}
+
+.admin__date-trigger--empty {
+    color: #999999;
+}
+
+/* Calendar popover overrides */
+.admin__popover-content {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    padding: 0 !important;
+}
+
+/* Time picker section inside popover */
+.admin__time-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-top: 1px solid #e8e8e8;
+    gap: 12px;
+}
+
+.admin__time-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #666666;
+    white-space: nowrap;
+}
+
+.admin__time-label svg {
+    width: 14px;
+    height: 14px;
+    color: #999999;
+    flex-shrink: 0;
+}
+
+.admin__time-selects {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.admin__time-colon {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333333;
+    padding: 0 1px;
+}
+
+/* Select trigger overrides for time selects */
+.admin__time-select {
+    width: 60px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    padding: 0 8px !important;
+    font-size: 0.8125rem !important;
+    background: #f5f5f5 !important;
+    border: 1px solid #d0d0d0 !important;
+    border-radius: 8px !important;
+    color: #111111 !important;
+    box-shadow: none !important;
+}
+
+.admin__time-select:hover {
+    border-color: #999999 !important;
+}
+
+.admin__time-select:focus {
+    border-color: #111111 !important;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06) !important;
+}
+
+.admin__time-select--period {
+    width: 56px !important;
+}
+
+/* Select content dropdown overrides (renders in portal) */
+[data-slot="select-content"] {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12) !important;
+    color: #111111 !important;
+    z-index: 100;
+}
+
+[data-slot="select-content"] [data-slot="select-item"] {
+    font-size: 0.8125rem !important;
+    color: #111111 !important;
+    border-radius: 6px !important;
+    padding: 6px 28px 6px 8px !important;
+    cursor: pointer;
+}
+
+[data-slot="select-content"] [data-slot="select-item"][data-highlighted] {
+    background: #f0f0f0 !important;
+    color: #111111 !important;
+}
+
+[data-slot="select-content"] [data-slot="select-item"][data-state="checked"] {
+    font-weight: 600;
+}
+
+/* Checkmark indicator */
+[data-slot="select-item-indicator"] svg {
+    color: #111111 !important;
+}
+
+/* Scroll up/down buttons */
+[data-slot="select-scroll-up-button"],
+[data-slot="select-scroll-down-button"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0;
+    color: #666666;
+    cursor: default;
+}
+
+[data-slot="select-scroll-up-button"] svg,
+[data-slot="select-scroll-down-button"] svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Select trigger chevron */
+.admin__time-select svg {
+    color: #666666 !important;
+    opacity: 0.7;
+}
+
+/* ---------- Password Input ---------- */
+.admin__input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    font-family: inherit;
+    color: #111111;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin__input::placeholder {
+    color: #999999;
+}
+
+.admin__input:focus {
+    outline: none;
+    border-color: #111111;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Submit Button ---------- */
+.admin__submit {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: #ffffff !important;
+    background: #111111 !important;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    margin-top: 4px;
+}
+
+.admin__submit:hover:not(:disabled) {
+    background: #333333;
+    transform: translateY(-1px);
+}
+
+.admin__submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.admin__submit:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ---------- Status Messages ---------- */
+.admin__status {
+    padding: 12px 16px;
+    font-size: 0.8125rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.admin__status--error {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.admin__status--success {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.admin__status--loading {
+    background: #f5f5f5;
+    color: #666666;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+    .admin {
+        padding: 16px;
+    }
+
+    .admin__header {
+        padding: 24px 20px 0;
+    }
+
+    .admin__body {
+        padding: 20px 20px 24px;
+    }
+
+    .admin__title {
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================================
+   Calendar Overrides (black & white)
+   Scoped to .admin__popover-content
+   ============================================ */
+
+/* --- Token overrides --- */
+.admin__popover-content [data-slot="calendar"] {
+    --color-accent: #f0f0f0;
+    --color-accent-foreground: #111111;
+    --color-primary: #111111;
+    --color-primary-foreground: #ffffff;
+    --color-muted-foreground: #888888;
+    --color-background: #ffffff;
+    --cell-size: 36px;
+    background: #ffffff;
+    padding: 16px;
+    font-family: var(--font, 'Inter', sans-serif);
+    color: #111111;
+}
+
+/* --- Calendar root --- */
+.admin__popover-content .rdp-root {
+    width: fit-content;
+}
+
+/* --- Month container --- */
+.admin__popover-content .rdp-month {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+/* --- Caption / Header row --- */
+.admin__popover-content .rdp-month_caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 100%;
+    padding: 0 36px;
+    position: relative;
+}
+
+.admin__popover-content .rdp-caption_label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111111;
+    user-select: none;
+}
+
+/* --- Nav buttons (prev / next) --- */
+.admin__popover-content .rdp-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    gap: 4px;
+}
+
+.admin__popover-content .rdp-button_previous,
+.admin__popover-content .rdp-button_next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #555555;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.admin__popover-content .rdp-button_previous:hover,
+.admin__popover-content .rdp-button_next:hover {
+    background: #f0f0f0;
+    color: #111111;
+}
+
+.admin__popover-content .rdp-button_previous svg,
+.admin__popover-content .rdp-button_next svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Weekday headers --- */
+.admin__popover-content .rdp-weekdays {
+    display: flex;
+}
+
+.admin__popover-content .rdp-weekday {
+    flex: 1;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #999999;
+    text-align: center;
+    padding: 4px 0;
+    user-select: none;
+}
+
+/* --- Week rows --- */
+.admin__popover-content .rdp-week {
+    display: flex;
+    width: 100%;
+    margin-top: 2px;
+}
+
+/* --- Day cells --- */
+.admin__popover-content .rdp-day {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    aspect-ratio: 1;
+    flex: 1;
+}
+
+/* --- Day buttons --- */
+.admin__popover-content .rdp-day button,
+.admin__popover-content .rdp-day [data-slot="button"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 36px;
+    aspect-ratio: 1;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #111111;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.admin__popover-content .rdp-day button:hover,
+.admin__popover-content .rdp-day [data-slot="button"]:hover {
+    background: #f0f0f0;
+}
+
+/* Selected day */
+.admin__popover-content .rdp-day button[data-selected-single="true"],
+.admin__popover-content .rdp-day [data-slot="button"][data-selected-single="true"] {
+    background: #111111;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.admin__popover-content .rdp-day button[data-selected-single="true"]:hover,
+.admin__popover-content .rdp-day [data-slot="button"][data-selected-single="true"]:hover {
+    background: #333333;
+}
+
+/* Today highlight */
+.admin__popover-content .rdp-today button,
+.admin__popover-content .rdp-today [data-slot="button"] {
+    background: #f0f0f0;
+    font-weight: 600;
+}
+
+.admin__popover-content .rdp-today button[data-selected-single="true"],
+.admin__popover-content .rdp-today [data-slot="button"][data-selected-single="true"] {
+    background: #111111;
+    color: #ffffff;
+}
+
+/* Outside (prev/next month) days */
+.admin__popover-content .rdp-outside button,
+.admin__popover-content .rdp-outside [data-slot="button"] {
+    color: #cccccc;
+}
+
+.admin__popover-content .rdp-outside button:hover,
+.admin__popover-content .rdp-outside [data-slot="button"]:hover {
+    color: #999999;
+}
+
+/* Disabled days */
+.admin__popover-content .rdp-disabled button,
+.admin__popover-content .rdp-disabled [data-slot="button"] {
+    color: #dddddd;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Hidden days */
+.admin__popover-content .rdp-hidden {
+    visibility: hidden;
+}
+
+/* --- Table reset (rdp uses a table internally) --- */
+.admin__popover-content table {
+    width: 100%;
+    border-collapse: collapse;
+}

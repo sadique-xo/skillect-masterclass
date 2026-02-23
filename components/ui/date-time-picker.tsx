@@ -3,16 +3,19 @@
 import * as React from "react";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon, Clock } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
-import { Input } from "@/components/ui/input";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
 
 interface DateTimePickerProps {
     date: Date | undefined;
@@ -21,68 +24,113 @@ interface DateTimePickerProps {
 
 export function DateTimePicker({ date, setDate }: DateTimePickerProps) {
     const [selectedDate, setSelectedDate] = React.useState<Date | undefined>(date);
-    const [timeValue, setTimeValue] = React.useState<string>(
-        date ? format(date, "HH:mm") : "00:00"
-    );
+
+    // Derive hour/minute/period from date
+    const hours24 = date ? date.getHours() : 0;
+    const hour12 = hours24 === 0 ? 12 : hours24 > 12 ? hours24 - 12 : hours24;
+    const minute = date ? date.getMinutes() : 0;
+    const period = hours24 >= 12 ? "PM" : "AM";
 
     React.useEffect(() => {
         setSelectedDate(date);
-        if (date) {
-            setTimeValue(format(date, "HH:mm"));
-        }
     }, [date]);
 
     const handleDateSelect = (newDate: Date | undefined) => {
-        if (newDate) {
-            const [hours, minutes] = timeValue.split(":");
-            newDate.setHours(parseInt(hours, 10), parseInt(minutes, 10));
+        if (newDate && date) {
+            // Preserve existing time when selecting a new date
+            newDate.setHours(date.getHours(), date.getMinutes());
         }
         setSelectedDate(newDate);
         setDate(newDate);
     };
 
-    const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newTime = e.target.value;
-        setTimeValue(newTime);
-
-        if (selectedDate) {
-            const [hours, minutes] = newTime.split(":");
-            const updatedDate = new Date(selectedDate);
-            updatedDate.setHours(parseInt(hours, 10), parseInt(minutes, 10));
-            setSelectedDate(updatedDate);
-            setDate(updatedDate);
+    const updateTime = (newHour12: number, newMinute: number, newPeriod: string) => {
+        const base = selectedDate ? new Date(selectedDate) : new Date();
+        let h24 = newHour12;
+        if (newPeriod === "AM") {
+            h24 = newHour12 === 12 ? 0 : newHour12;
+        } else {
+            h24 = newHour12 === 12 ? 12 : newHour12 + 12;
         }
+        base.setHours(h24, newMinute);
+        setSelectedDate(base);
+        setDate(base);
+    };
+
+    const handleHourChange = (val: string) => {
+        updateTime(parseInt(val, 10), minute, period);
+    };
+
+    const handleMinuteChange = (val: string) => {
+        updateTime(hour12, parseInt(val, 10), period);
+    };
+
+    const handlePeriodChange = (val: string) => {
+        updateTime(hour12, minute, val);
     };
 
     return (
         <Popover>
             <PopoverTrigger asChild>
-                <Button
-                    variant={"outline"}
-                    className={cn(
-                        "w-[280px] justify-start text-left font-normal",
-                        !date && "text-muted-foreground"
-                    )}
+                <button
+                    type="button"
+                    className={`admin__date-trigger${!date ? " admin__date-trigger--empty" : ""}`}
                 >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {date ? format(date, "PPP p") : <span>Pick a date and time</span>}
-                </Button>
+                    <CalendarIcon />
+                    {date ? format(date, "PPP h:mm a") : <span>Pick a date and time</span>}
+                </button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0 border-border" align="start">
+            <PopoverContent className="admin__popover-content" align="start">
                 <Calendar
                     mode="single"
                     selected={selectedDate}
                     onSelect={handleDateSelect}
                     initialFocus
                 />
-                <div className="p-3 border-t border-border flex items-center justify-between gap-2">
-                    <Clock className="w-4 h-4 text-muted-foreground mr-2" />
-                    <Input
-                        type="time"
-                        value={timeValue}
-                        onChange={handleTimeChange}
-                        className="w-full text-center"
-                    />
+                <div className="admin__time-section">
+                    <div className="admin__time-label">
+                        <Clock />
+                        <span>Time</span>
+                    </div>
+                    <div className="admin__time-selects">
+                        <Select value={String(hour12)} onValueChange={handleHourChange}>
+                            <SelectTrigger className="admin__time-select">
+                                <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {Array.from({ length: 12 }, (_, i) => i + 1).map((h) => (
+                                    <SelectItem key={h} value={String(h)}>
+                                        {String(h).padStart(2, "0")}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+
+                        <span className="admin__time-colon">:</span>
+
+                        <Select value={String(minute)} onValueChange={handleMinuteChange}>
+                            <SelectTrigger className="admin__time-select">
+                                <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {Array.from({ length: 12 }, (_, i) => i * 5).map((m) => (
+                                    <SelectItem key={m} value={String(m)}>
+                                        {String(m).padStart(2, "0")}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+
+                        <Select value={period} onValueChange={handlePeriodChange}>
+                            <SelectTrigger className="admin__time-select admin__time-select--period">
+                                <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="AM">AM</SelectItem>
+                                <SelectItem value="PM">PM</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
                 </div>
             </PopoverContent>
         </Popover>
